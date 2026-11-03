@@ -1,0 +1,1250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safarnama | Explore Beyond Destinations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #102a43;
+    --blue: #174d73;
+    --orange: #f28c28;
+    --light: #f4f8fb;
+    --text: #263746;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+
+header {
+    background: var(--navy);
+    color: white;
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.logo small {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #c8d5df;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+.book-btn, .primary-btn {
+    background: var(--orange);
+    color: white;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    transition: .3s;
+}
+
+.book-btn:hover, .primary-btn:hover {
+    background: #d96d0b;
+    transform: translateY(-3px);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 27px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    background:
+    linear-gradient(90deg, rgba(8,29,48,.92), rgba(8,29,48,.15)),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800')
+    center/cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero small {
+    color: var(--orange);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1.1;
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero p {
+    color: #e2e9ef;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.outline-btn {
+    border: 1px solid white;
+    padding: 12px 24px;
+    color: white;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: var(--navy);
+}
+
+/* FEATURES */
+
+.features {
+    max-width: 1150px;
+    margin: -35px auto 0;
+    position: relative;
+    background: white;
+    box-shadow: 0 8px 35px #00000012;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 25px;
+}
+
+.feature {
+    text-align: center;
+    border-right: 1px solid #ddd;
+    padding: 8px;
+}
+
+.feature:last-child {
+    border: none;
+}
+
+.feature .icon {
+    font-size: 29px;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.feature h3 {
+    font-size: 16px;
+}
+
+.feature p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* COMMON */
+
+section {
+    padding: 85px 9%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading small {
+    color: var(--orange);
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--navy);
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-content small {
+    color: var(--orange);
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--navy);
+    margin: 18px 0;
+}
+
+.about-content p {
+    line-height: 1.9;
+    color: #687582;
+    margin-bottom: 18px;
+}
+
+.about-content ul {
+    list-style: none;
+    margin: 20px 0 30px;
+}
+
+.about-content li {
+    margin: 13px 0;
+}
+
+.about-content li::before {
+    content: "✓";
+    color: #29965a;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* PACKAGES */
+
+.packages-section {
+    background: var(--light);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #0000000c;
+    transition: .3s;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px #00000018;
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-info {
+    padding: 22px;
+}
+
+.package-info small {
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.package-info h3 {
+    font-size: 22px;
+    color: var(--navy);
+    margin: 10px 0;
+}
+
+.package-info p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.package-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 17px;
+}
+
+.price {
+    color: #16804b;
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.details-btn {
+    border: 1px solid var(--orange);
+    background: white;
+    color: var(--orange);
+    border-radius: 25px;
+    padding: 9px 15px;
+}
+
+.details-btn:hover {
+    background: var(--orange);
+    color: white;
+}
+
+/* DESTINATIONS */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.destination {
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.destination img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.destination:hover img {
+    transform: scale(1.1);
+}
+
+.destination::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, #071c31d9);
+}
+
+.destination h3 {
+    position: absolute;
+    z-index: 2;
+    bottom: 22px;
+    left: 22px;
+    color: white;
+    font-size: 24px;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background:
+    linear-gradient(#102a43df, #102a43df),
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1500')
+    center/cover;
+    color: white;
+    text-align: center;
+}
+
+.experience h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    margin: 20px 0;
+}
+
+.experience p {
+    color: #d5e0e8;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* TESTIMONIALS */
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.stars {
+    color: #f5a623;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    line-height: 1.8;
+    color: #65717d;
+    margin-bottom: 20px;
+}
+
+.review h3 {
+    color: var(--navy);
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--navy);
+    margin: 15px 0;
+}
+
+.contact-info p {
+    color: #667582;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.contact-info .info {
+    margin: 18px 0;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px #0000000a;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce3e8;
+    border-radius: 6px;
+    font-family: inherit;
+    outline: none;
+    background: #fafcfd;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--blue);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+    margin-top: 15px;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b2034;
+    color: white;
+    padding: 60px 9% 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 45px;
+    margin-bottom: 40px;
+}
+
+footer h3 {
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+footer p, footer a {
+    color: #aebdca;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+footer a:hover {
+    color: var(--orange);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff20;
+    padding-top: 25px;
+    color: #9cabb8;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .features {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .about {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 750px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header .book-btn {
+        display: none;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .about, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .package-grid, .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature:nth-child(2) {
+        border-right: none;
+    }
+
+    .feature:nth-child(1), .feature:nth-child(2) {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+    section {
+        padding: 65px 6%;
+    }
+
+    .hero {
+        padding: 70px 6%;
+        min-height: 570px;
+    }
+
+    .package-grid, .review-grid, .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 33px;
+    }
+
+    .form-grid, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .experience h2 {
+        font-size: 35px;
+    }
+
+    .outline-btn {
+        margin: 15px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+    <a href="#home" class="logo">
+        Safar<span>nama.</span>
+        <small>TRAVEL • EXPLORE • DISCOVER</small>
+    </a>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#founder">Founder</a>
+        <a href="#packages">Packages</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="book-btn">Book Now ✈</a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <small>EXPLORE THE WORLD WITH US</small>
+
+        <h1>Your Journey,<br>Our <span>Passion.</span></h1>
+
+        <p>
+            Discover breathtaking destinations, explore new cultures
+            and create unforgettable memories. Your next adventure
+            starts right here.
+        </p>
+
+        <a href="#packages" class="primary-btn">✈ Explore Packages</a>
+
+        <a href="#destinations" class="outline-btn">Discover Places →</a>
+    </div>
+</section>
+
+<!-- FEATURES -->
+
+<div class="features">
+
+    <div class="feature">
+        <div class="icon">✈</div>
+        <h3>Best Destinations</h3>
+        <p>Handpicked places for you</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">₹</div>
+        <h3>Affordable Prices</h3>
+        <p>Great travel deals always</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🛡</div>
+        <h3>Safe & Comfortable</h3>
+        <p>Your safety is our priority</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">☎</div>
+        <h3>24/7 Support</h3>
+        <p>We are always here for you</p>
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=900" alt="Beautiful mountain destination">
+    </div>
+
+    <div class="about-content">
+        <small>ABOUT SAFARNAMA</small>
+
+        <h2>Travel Beyond Boundaries</h2>
+
+        <p>
+            At Safarnama, we believe that travelling is not just
+            about visiting places. It is about discovering yourself,
+            meeting new people and collecting beautiful memories.
+        </p>
+
+        <p>
+            We bring you carefully planned travel packages,
+            comfortable experiences and unforgettable adventures.
+        </p>
+
+        <ul>
+            <li>Curated packages for every traveller</li>
+            <li>Hassle-free travel planning</li>
+            <li>Explore India with confidence</li>
+        </ul>
+
+        <a href="#contact" class="primary-btn">Know More About Us →</a>
+    </div>
+
+</section>
+
+
+
+<!-- FOUNDER SECTION -->
+
+<style>
+.founder {
+    background: #f4f8fb;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.founder-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-image img {
+    width: 260px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0 #f28c28;
+}
+
+.founder-content small {
+    color: #f28c28;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.founder-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #102a43;
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.founder-content h3 {
+    color: #174d73;
+    margin-bottom: 18px;
+}
+
+.founder-content p {
+    color: #687582;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.founder-signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-style: italic;
+    color: #f28c28;
+}
+
+@media(max-width: 750px) {
+    .founder {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+</style>
+
+<section class="founder" id="founder">
+
+    <div class="founder-image">
+        <img src="images/sanjay.png"
+             alt="Sanjay Vishwakarma">
+    </div>
+
+    <div class="founder-content">
+
+        <small>MEET THE FOUNDER</small>
+
+        <h2>The Person Behind Safarnama</h2>
+
+        <h3>Sanjay Vishwakarma</h3>
+
+        <p>
+            Hello! I'm Sanjay, the Founder and Owner of Safarnama.
+            As an engineering student with an interest in technology,
+            creativity and innovation, I envisioned creating a travel
+            brand that makes exploring new destinations easier
+            and more memorable.
+        </p>
+
+        <p>
+            My vision is to connect people with beautiful destinations,
+            meaningful experiences and unforgettable journeys.
+        </p>
+
+        <div class="founder-signature">
+            — Sanjay Vishwakarma
+        </div>
+
+        <p><strong>Founder & Owner | Safarnama</strong></p>
+
+    </div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section class="packages-section" id="packages">
+
+    <div class="section-heading">
+        <small>OUR PACKAGES</small>
+        <h2>Popular Tour Packages</h2>
+        <p>Handpicked travel experiences for every kind of traveller.</p>
+    </div>
+
+    <div class="package-grid">
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700" alt="Manali">
+            <div class="package-info">
+                <small>HIMACHAL PRADESH</small>
+                <h3>Manali Getaway</h3>
+                <p>Experience snow-covered mountains, beautiful valleys and peaceful nature.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹12,999</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Manali')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=700" alt="Taj Mahal">
+            <div class="package-info">
+                <small>UTTAR PRADESH</small>
+                <h3>Agra Heritage Tour</h3>
+                <p>Discover India's incredible history and magnificent architecture.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹8,999</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Agra')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700" alt="Goa beach">
+            <div class="package-info">
+                <small>GOA</small>
+                <h3>Goa Beach Escape</h3>
+                <p>Relax on beautiful beaches and enjoy a refreshing coastal holiday.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹11,499</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Goa')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=700" alt="Kashmir">
+            <div class="package-info">
+                <small>JAMMU & KASHMIR</small>
+                <h3>Kashmir Paradise</h3>
+                <p>Explore scenic lakes, green valleys and spectacular landscapes.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹15,999</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Kashmir')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700" alt="Rajasthan">
+            <div class="package-info">
+                <small>RAJASTHAN</small>
+                <h3>Royal Rajasthan</h3>
+                <p>Discover royal palaces, historic forts and colourful traditions.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹9,999</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Rajasthan')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=700" alt="Andaman">
+            <div class="package-info">
+                <small>ANDAMAN</small>
+                <h3>Island Adventure</h3>
+                <p>Enjoy crystal-clear waters, tropical beaches and island adventures.</p>
+                <div class="package-bottom">
+                    <div>
+                        <div class="price">₹19,999</div>
+                        <small>/ person</small>
+                    </div>
+                    <button class="details-btn" onclick="selectTrip('Andaman')">View Details →</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DESTINATIONS -->
+
+<section id="destinations">
+
+    <div class="section-heading">
+        <small>TOP DESTINATIONS</small>
+        <h2>Explore Amazing Destinations</h2>
+        <p>From snow-capped mountains to sunny beaches, find your next adventure.</p>
+    </div>
+
+    <div class="destination-grid">
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=700" alt="Manali">
+            <h3>📍 Manali</h3>
+        </div>
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=700" alt="Kedarnath">
+            <h3>📍 Kedarnath</h3>
+        </div>
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700" alt="Goa">
+            <h3>📍 Goa</h3>
+        </div>
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=700" alt="Kashmir">
+            <h3>📍 Kashmir</h3>
+        </div>
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700" alt="Rajasthan">
+            <h3>📍 Rajasthan</h3>
+        </div>
+
+        <div class="destination">
+            <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=700" alt="Andaman">
+            <h3>📍 Andaman</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="experience">
+
+    <small>YOUR NEXT ADVENTURE AWAITS</small>
+
+    <h2>Don't Just Dream About It.<br>Go Explore It.</h2>
+
+    <p>
+        The world is full of beautiful places waiting to be discovered.
+        Pack your bags and let Safarnama make your journey special.
+    </p>
+
+    <a href="#contact" class="primary-btn">Start Your Journey ✈</a>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+    <div class="section-heading">
+        <small>TRAVELLER STORIES</small>
+        <h2>What Our Travellers Say</h2>
+        <p>Real experiences make every journey special.</p>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"The Manali trip was amazing! Everything was well planned and the experience was unforgettable."</p>
+            <h3>Yuvraj Rathod</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Excellent travel experience. The arrangements were comfortable and the team was very supportive."</p>
+            <h3>Sumit Kalmodiya</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Safarnama made our family vacation so easy. Definitely looking forward to travelling again!"</p>
+            <h3>Roshni Chouhan</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-wrapper">
+
+        <div class="contact-info">
+
+            <small style="color:var(--orange);font-weight:800;letter-spacing:3px;">
+                PLAN YOUR TRIP
+            </small>
+
+            <h2>Let's Plan Your Next Adventure</h2>
+
+            <p>
+                Have a question or want a custom tour package?
+                Send us a message and our travel experts will
+                get back to you.</p>
+            <div class="info">📍 Indore, Madhya Pradesh, India</div>
+
+        </div>
+        <div class="contact-form">
+
+            <form id="travelForm">
+
+                <div class="form-grid">
+
+                    <input type="text" placeholder="Your Name" required>
+
+                    <input type="email" placeholder="Your Email" required>
+
+                    <input type="tel" placeholder="Phone Number" required>
+
+                    <select id="destinationSelect" required>
+                        <option value="">Select Destination</option>
+                        <option>Manali</option>
+                        <option>Agra</option>
+                        <option>Goa</option>
+                        <option>Kashmir</option>
+                        <option>Rajasthan</option>
+                        <option>Andaman</option>
+                        <option>Other</option>
+                    </select>
+
+                </div>
+
+                <textarea placeholder="Your Message (Travel dates, number of people, etc.)" required></textarea>
+
+                <button type="submit" class="primary-btn">
+                    ✈ Send Enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="logo">Safar<span>nama.</span></div>
+            <p>Travel • Explore • Discover</p>
+            <p>
+                Making every journey meaningful,
+                every destination memorable and
+                every traveller happy.
+            </p>
+        </div>
+
+         <div>
+            <h3>Quick Links</h3>
+            <p><a href="#home">Home</a></p>
+            <p><a href="#about">About Us</a></p>
+            <p><a href="#packages">Packages</a></p>
+            <p><a href="#destinations">Destinations</a></p>
+            <p><a href="#contact">Contact</a></p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Indore, Madhya Pradesh</p>
+            <p>+91 77709 10472</p>
+            <p>hello@safarnama.com</p>
+            <p>Monday - Sunday</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Safarnama. All Rights Reserved. | Travel & Tourism
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+// Close mobile menu after clicking a link
+
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+    });
+});
+
+// Select a tour package
+
+function selectTrip(destination) {
+    document.getElementById("destinationSelect").value = destination;
+    document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Contact form demo
+
+document.getElementById("travelForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    alert("Thank you for choosing Safarnama! Your travel enquiry has been received.");
+
+    this.reset();
+});
+
+</script>
+
+</body>
+</html>
